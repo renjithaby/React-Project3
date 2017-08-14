@@ -13,7 +13,7 @@ module.exports = function() {
         devServer: {
             contentBase: './src',
             port: 8003,
-           // host:"10.93.17.63",
+            //host:"10.93.17.59",
             publicPath: "/",
             historyApiFallback: true
 

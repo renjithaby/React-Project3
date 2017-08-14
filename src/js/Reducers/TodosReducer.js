@@ -23,13 +23,16 @@ const TodosReducer = (state = [], action = {}) => {
     }
 
     function updateTodo(state,action){
-        return [...state, {id: action.id,status : "completed"}];
+        let index = state.findIndex(item => item.id  == action.id);
+        console.log(index);
+         console.log(state);
+        return [...state.slice(0,index), {id : state[index].id, title : state[index].title, status : "completed"}, ...state.slice(index+1) ];
 
     }
 
     function deleteTodo(state,action) {
-
-        return state.todoList.filter(t=>t.id === action.id);
+         let index = state.findIndex(item => item.id  == action.id);
+        return [...state.slice(0,index), ...state.slice(index+1) ];
     }
 }
 
