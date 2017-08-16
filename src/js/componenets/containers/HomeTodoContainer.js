@@ -12,10 +12,14 @@ import {Todos} from "../Todos";
 
 
 const getTodoList = (state) =>{
+    console.log("state.generalInfo.showAll.....");
+    console.log(state.generalInfo.showAll);
     if (state.generalInfo.showAll === true){
         return state.todoList;
     }else {
-        state.todoList.filter(t=>t.status !== "completed");
+        return state.todoList.filter(t=>t.status !== "completed");
+        console.log("state.todoList");
+        console.log(state.todoList);
     }
 }
 
@@ -32,8 +36,9 @@ const updateTodoItem = (dispatch,id) => {
     dispatch (Actions.updateTodo(id));
 }
 const updateTodoFilter = (dispatch) => {
-    dispatch (Actions.updateTodoFilter());
     console.log("update the filter");
+    dispatch (Actions.updateTodoFilter());
+
 }
 
 const mapStateToProps = state => {

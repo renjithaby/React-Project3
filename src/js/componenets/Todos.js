@@ -35,7 +35,7 @@ export   class Todos extends React.Component
                 </div>
                 <div class="row" style={[ styles.section ]}>
                     <div class="col">
-                        <h1> {this.props.showAll.toString()} </h1>
+                        <h1> {this.props.showAll} </h1>
                         <TodoFilter showAll = {this.props.showAll} updateTodoFilter = {this.props.updateTodoFilter}/>
                         <TodoList todoList = {this.props.todoList} updateTodoItem = {this.props.updateTodoItem} deleteTodoItem = {this.props.deleteTodoItem}/>
                         <div class="card">

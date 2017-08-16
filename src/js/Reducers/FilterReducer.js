@@ -6,7 +6,10 @@ const FilterReducer = (state = {showAll:true}, action = {}) => {
     switch (action.type){
 
         case "UPDATE_TODO_FILTER" :
+            console.log("my state....");
+            console.log(state);
             return updateFilter(state);
+            break;
 
         default:
             return state;
@@ -15,7 +18,7 @@ const FilterReducer = (state = {showAll:true}, action = {}) => {
 
    function updateFilter(state){
 
-       return [...state , {showAll : !state.showAll}];
+       return  Object.assign({}, state,{showAll: !state.showAll});
 
     }
 
